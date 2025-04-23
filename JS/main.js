@@ -63,11 +63,7 @@ function login() {
     for (var i = 0; i < signUpArray.length; i++) {
         if (signUpArray[i].email.toLowerCase() === email && signUpArray[i].password === password) {
             localStorage.setItem('sessionUsername', signUpArray[i].name);
-            if (baseURL === '/') {
-                location.replace('https://' + location.hostname + '/home.html');
-            } else {
-                location.replace(baseURL + '/home.html');
-            }
+            location.href = 'home.html';
             return true;
         }
     }
